@@ -1,0 +1,27 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { withBase } from "../lib/paths";
+---
+
+<BaseLayout title="内容入口 | 任辉涛的个人主页">
+  <section class="grid gap-5">
+    <h1 class="text-3xl font-bold">内容入口</h1>
+    <p class="leading-8 text-base-content/75">
+      这个页面保留为后续项目展示入口。当前基础版主要内容已经整理在下面三个模块中。
+    </p>
+    <div class="grid gap-4 md:grid-cols-3">
+      <a class="rounded-lg border border-base-300 bg-base-100 p-5 transition hover:shadow-md" href={withBase("knowledge")}>
+        <h2 class="text-xl font-bold">知识库</h2>
+        <p class="mt-2 text-base-content/70">自写 PDF 文档和学习笔记。</p>
+      </a>
+      <a class="rounded-lg border border-base-300 bg-base-100 p-5 transition hover:shadow-md" href={withBase("wechat")}>
+        <h2 class="text-xl font-bold">公众号合集</h2>
+        <p class="mt-2 text-base-content/70">公众号文章合集入口。</p>
+      </a>
+      <a class="rounded-lg border border-base-300 bg-base-100 p-5 transition hover:shadow-md" href={withBase("ima")}>
+        <h2 class="text-xl font-bold">IMA 知识库</h2>
+        <p class="mt-2 text-base-content/70">外部知识库链接集合。</p>
+      </a>
+    </div>
+  </section>
+</BaseLayout>

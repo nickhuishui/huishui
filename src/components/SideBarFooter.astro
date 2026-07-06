@@ -1,0 +1,17 @@
+---
+import { withBase } from "../lib/paths";
+---
+
+<div
+  class="block sticky pointer-events-none bottom-10 bg-base-200 justify-center h-12 [mask-image:linear-gradient(transparent,#000000)]"
+>
+</div>
+
+<div class="px-4 pb-5 pt-3 sticky bottom-0 bg-base-200">
+  <div class="rounded-lg border border-base-300 bg-base-100 p-4 text-sm leading-6">
+    <div class="font-bold">联系我</div>
+    <a class="link-hover block break-all" href="mailto:yantumanman@163.com">yantumanman@163.com</a>
+    <a class="link-hover block break-all" href="mailto:renhuitao2026@gmail.com">renhuitao2026@gmail.com</a>
+    <a class="link-hover mt-2 block" href={withBase("rss.xml")} target="_blank">RSS 订阅</a>
+  </div>
+</div>

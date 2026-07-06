@@ -1,0 +1,81 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import createSlug from "../lib/createSlug";
+import { imaKnowledgeBases } from "../data/ima";
+import { knowledgeItems } from "../data/knowledge";
+import { siteStats } from "../data/siteStats";
+import { wechatCollections } from "../data/wechat";
+import { withBase } from "../lib/paths";
+
+const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const last_posts = posts.slice(0, 3);
+---
+
+<BaseLayout sideBarActiveItemID="home">
+  <section class="grid gap-8 pb-10">
+    <div class="rounded-lg border border-base-300 bg-base-100 p-6 md:p-8">
+      <div class="text-sm font-bold uppercase tracking-[0.2em] text-base-content/60">Personal Knowledge Site</div>
+      <h1 class="mt-4 text-4xl font-bold leading-tight md:text-5xl">任辉涛</h1>
+      <p class="mt-4 max-w-3xl text-lg leading-8 text-base-content/80">
+        中国科学院大学研一，2024 国家奖学金获得者。研究方向为离子光频标准。这里用于整理个人介绍、短文档、公众号文章合集和外部知识库入口。
+      </p>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a class="btn btn-primary" href={withBase("knowledge")}>查看知识库</a>
+        <a class="btn btn-outline" href="mailto:yantumanman@163.com">邮件联系</a>
+      </div>
+    </div>
+
+    <div class="grid gap-4 md:grid-cols-3">
+      {
+        siteStats.map((stat) => (
+          <a class="rounded-lg border border-base-300 bg-base-100 p-5 transition hover:border-base-content/40 hover:shadow-md" href={withBase(stat.href)}>
+            <div class="text-4xl font-bold">{stat.value}</div>
+            <div class="mt-2 text-base-content/70">{stat.label}</div>
+          </a>
+        ))
+      }
+    </div>
+
+    <div class="grid gap-5 lg:grid-cols-3">
+      <a class="rounded-lg border border-base-300 bg-base-100 p-6 transition hover:border-base-content/40 hover:shadow-md" href={withBase("knowledge")}>
+        <div class="text-sm font-bold text-base-content/60">LOCAL DOCUMENTS</div>
+        <h2 class="mt-3 text-2xl font-bold">知识文档</h2>
+        <p class="mt-3 leading-7 text-base-content/70">Markdown、GitHub、量子力学和英语学习等自写 PDF，后续可扩展成小册子或系列文章。</p>
+        <div class="mt-5 text-sm text-base-content/60">最近：{knowledgeItems[0].title}</div>
+      </a>
+
+      <a class="rounded-lg border border-base-300 bg-base-100 p-6 transition hover:border-base-content/40 hover:shadow-md" href={withBase("wechat")}>
+        <div class="text-sm font-bold text-base-content/60">WECHAT</div>
+        <h2 class="mt-3 text-2xl font-bold">公众号合集</h2>
+        <p class="mt-3 leading-7 text-base-content/70">集中放置公众号文章合集链接，方便从个人主页进入已有专题内容。</p>
+        <div class="mt-5 text-sm text-base-content/60">已收录 {wechatCollections.length} 个合集</div>
+      </a>
+
+      <a class="rounded-lg border border-base-300 bg-base-100 p-6 transition hover:border-base-content/40 hover:shadow-md" href={withBase("ima")}>
+        <div class="text-sm font-bold text-base-content/60">IMA</div>
+        <h2 class="mt-3 text-2xl font-bold">IMA 知识库</h2>
+        <p class="mt-3 leading-7 text-base-content/70">物理、数学、考研资料、数学建模等外部知识库入口。</p>
+        <div class="mt-5 text-sm text-base-content/60">已收录 {imaKnowledgeBases.length} 个知识库</div>
+      </a>
+    </div>
+
+    <section>
+      <div class="mb-4 flex items-end justify-between gap-4">
+        <h2 class="text-3xl font-bold">博客 / 随笔</h2>
+        <a class="link-hover text-sm" href={withBase("blog/")}>全部文章</a>
+      </div>
+      <div class="grid gap-3">
+        {
+          last_posts.map((post) => (
+            <a class="rounded-lg border border-base-300 bg-base-100 p-5 transition hover:border-base-content/40 hover:shadow-md" href={withBase("blog/" + createSlug(post.data.title, post.slug))}>
+              <div class="text-xl font-bold">{post.data.title}</div>
+              <p class="mt-2 leading-7 text-base-content/70">{post.data.description}</p>
+            </a>
+          ))
+        }
+      </div>
+    </section>
+  </section>
+</BaseLayout>

@@ -1,0 +1,37 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { wechatCollections } from "../data/wechat";
+---
+
+<BaseLayout title="公众号合集 | 任辉涛的个人主页" sideBarActiveItemID="wechat">
+  <section class="grid gap-8">
+    <header class="rounded-lg border border-base-300 bg-base-100 p-6 md:p-8">
+      <div class="text-sm font-bold uppercase tracking-[0.2em] text-base-content/60">WeChat Collections</div>
+      <h1 class="mt-3 text-4xl font-bold">公众号合集</h1>
+      <p class="mt-4 max-w-3xl leading-8 text-base-content/75">
+        这里整理公众号里常用的合集入口。当前先使用你提供的链接，后续可以补充正式标题、封面、主题简介和推荐阅读顺序。
+      </p>
+    </header>
+
+    <div class="grid gap-4 md:grid-cols-2">
+      {
+        wechatCollections.map((collection, index) => (
+          <article class="rounded-lg border border-base-300 bg-base-100 p-5">
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="badge badge-neutral">{collection.source}</span>
+              <span class="text-sm text-base-content/60">#{index + 1}</span>
+            </div>
+            <h2 class="mt-3 text-xl font-bold">{collection.title}</h2>
+            <p class="mt-2 leading-7 text-base-content/70">{collection.summary}</p>
+            <div class="mt-3 flex flex-wrap gap-2">
+              {collection.tags.map((tag) => <span class="badge badge-ghost">{tag}</span>)}
+            </div>
+            <div class="mt-5">
+              <a class="btn btn-sm btn-primary" href={collection.url} target="_blank" rel="noreferrer">打开合集</a>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>

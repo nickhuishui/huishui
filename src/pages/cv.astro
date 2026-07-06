@@ -1,0 +1,70 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import TimeLineElement from "../components/cv/TimeLine.astro";
+---
+
+<BaseLayout title="Resume" sideBarActiveItemID="cv">
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">关于我</div>
+  </div>
+
+  <div class="mb-10 grid gap-4 leading-8 text-base-content/80">
+    <p>
+      我是任辉涛，中国科学院大学研一，2024 国家奖学金获得者。当前研究方向为离子光频标准。
+    </p>
+    <p>
+      这个网站用于整理我的个人介绍、学习文档、公众号文章合集和 IMA 知识库。第一版先保证内容结构清晰，后续会继续优化视觉和文章体系。
+    </p>
+  </div>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">教育与研究</div>
+  </div>
+
+  <div class="time-line-container grid gap-4 mb-10">
+    <TimeLineElement
+      title="中国科学院大学"
+      subtitle="研一 / 研究方向：离子光频标准"
+    >
+      关注离子光频标准相关的物理问题、实验体系和精密测量方法。
+    </TimeLineElement>
+  </div>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">荣誉</div>
+  </div>
+
+  <div class="time-line-container mb-10">
+    <TimeLineElement
+      title="2024 国家奖学金"
+      subtitle="学习与科研阶段荣誉"
+    >
+      作为个人主页中的重要信息展示，后续可继续补充奖项说明、证书链接或更完整的简历内容。
+    </TimeLineElement>
+  </div>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">联系方式</div>
+  </div>
+
+  <ul class="list-disc mx-6 mb-10 grid gap-2">
+    <li>
+      <a href="mailto:yantumanman@163.com">yantumanman@163.com</a>
+    </li>
+    <li>
+      <a href="mailto:renhuitao2026@gmail.com">renhuitao2026@gmail.com</a>
+    </li>
+  </ul>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">内容方向</div>
+  </div>
+
+  <ul class="list-disc md:columns-2 columns-1 mx-6">
+    <li>离子光频标准</li>
+    <li>量子力学学习笔记</li>
+    <li>Markdown 与 GitHub 工具文档</li>
+    <li>公众号文章合集整理</li>
+    <li>IMA 外部知识库维护</li>
+  </ul>
+</BaseLayout>

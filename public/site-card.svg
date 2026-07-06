@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Ren Huitao Personal Site</title>
+  <desc id="desc">A quiet personal knowledge site for physics notes, writing, and curated resources.</desc>
+  <rect width="1200" height="630" fill="#f7f7f2"/>
+  <rect x="84" y="78" width="1032" height="474" rx="20" fill="#ffffff" stroke="#222222" stroke-width="4"/>
+  <text x="130" y="190" fill="#111111" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="48" font-weight="700">Ren Huitao</text>
+  <text x="130" y="258" fill="#333333" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="30">中国科学院大学研一 / 离子光频标准</text>
+  <text x="130" y="340" fill="#111111" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="34" font-weight="700">个人知识库 · 公众号合集 · IMA 知识库</text>
+  <line x1="130" y1="392" x2="1070" y2="392" stroke="#d7d7ce" stroke-width="3"/>
+  <circle cx="910" cy="205" r="48" fill="#111111"/>
+  <circle cx="995" cy="205" r="48" fill="#d8b35d"/>
+  <path d="M898 205h109" stroke="#b94b68" stroke-width="9" stroke-linecap="round"/>
+  <text x="130" y="470" fill="#555555" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="26">Notes on physics, tools, and learning.</text>
+</svg>
