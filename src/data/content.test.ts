@@ -27,14 +27,18 @@ function listTextFiles(directory: string): string[] {
 
 describe("content metadata", () => {
   test("lists the expected local knowledge documents", () => {
-    expect(knowledgeItems).toHaveLength(5);
+    expect(knowledgeItems).toHaveLength(7);
     expect(knowledgeItems.map((item) => item.category)).toEqual([
       "写作与工具",
       "写作与工具",
       "物理笔记",
       "物理笔记",
       "英语学习",
+      "英语学习",
+      "英语学习",
     ]);
+    expect(knowledgeItems.map((item) => item.title)).toContain("考研复试英文自我介绍模板");
+    expect(knowledgeItems.map((item) => item.title)).toContain("考研复试英文问答汇总");
   });
 
   test("points every knowledge document at an existing public PDF", () => {

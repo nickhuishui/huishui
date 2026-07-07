@@ -80,6 +80,30 @@ export const knowledgeItems: KnowledgeItem[] = [
     updatedAt: "2025-11-16",
     status: "published",
   },
+  {
+    title: "考研复试英文自我介绍模板",
+    slug: "postgraduate-interview-english-self-introduction",
+    category: "英语学习",
+    tags: ["考研复试", "英语口语", "自我介绍"],
+    summary: "整理考研复试中英文自我介绍的常用表达和模板句式，适合用于准备复试口语介绍与个人经历陈述。",
+    file: "files/knowledge/postgraduate-interview-english-self-introduction.pdf",
+    fileType: "PDF",
+    size: "188 KB",
+    updatedAt: "2026-05-17",
+    status: "published",
+  },
+  {
+    title: "考研复试英文问答汇总",
+    slug: "postgraduate-interview-english-qa",
+    category: "英语学习",
+    tags: ["考研复试", "英文问答", "口语准备"],
+    summary: "汇总考研复试中常见的英文问答表达，适合用于提前准备研究兴趣、学习经历、未来规划等复试口语问题。",
+    file: "files/knowledge/postgraduate-interview-english-qa.pdf",
+    fileType: "PDF",
+    size: "341 KB",
+    updatedAt: "2026-07-08",
+    status: "published",
+  },
 ];
 
 export const knowledgeCategories = ["全部", "写作与工具", "物理笔记", "英语学习"] as const;
