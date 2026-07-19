@@ -59,12 +59,14 @@ describe("content metadata", () => {
   });
 
   test("lists all IMA knowledge base links", () => {
-    expect(imaKnowledgeBases).toHaveLength(6);
+    expect(imaKnowledgeBases).toHaveLength(8);
     expect(
       imaKnowledgeBases.every((item) =>
         item.url.startsWith("https://ima.qq.com/wiki/"),
       ),
     ).toBe(true);
+    expect(imaKnowledgeBases.map((item) => item.title)).toContain("考研英语");
+    expect(imaKnowledgeBases.map((item) => item.title)).toContain("钟");
   });
 
   test("uses the public pen name on the homepage hero", () => {

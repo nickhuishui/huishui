@@ -56,4 +56,20 @@ export const imaKnowledgeBases: ImaKnowledgeBase[] = [
     url: "https://ima.qq.com/wiki/?shareId=11a2252885aee8e8790dd6065c51073038408f62d947a03715cd146515236904",
     source: "IMA 知识库",
   },
+  {
+    title: "考研英语",
+    topic: "英语",
+    summary: "考研英语相关资料与笔记的 IMA 知识库入口。",
+    tags: ["考研英语", "复习资料"],
+    url: "https://ima.qq.com/wiki/?shareId=4d47e5f98f38e279d7b87ec12bf3c52997bf4e67c334612f96f9a34e1a24d2d7",
+    source: "IMA 知识库",
+  },
+  {
+    title: "钟",
+    topic: "通用",
+    summary: "“钟”主题的 IMA 知识库入口，方便后续继续补充相关内容。",
+    tags: ["钟", "资料整理"],
+    url: "https://ima.qq.com/wiki/?shareId=a685db5686cdedad5e94f62840ebe485c363aa014384545a2e31b0504409be74",
+    source: "IMA 知识库",
+  },
 ];
