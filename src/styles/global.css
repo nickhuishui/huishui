@@ -1,3 +1,108 @@
 .time-line-container>div:last-child .education__time>.education__line {
     display: none;
 }
+
+/* Long-form Markdown reading surface. Keep this scoped to posts so the rest
+   of the site keeps its existing layout and component spacing. */
+.post-document {
+    width: 100%;
+    max-width: 760px;
+    color: #20252b;
+    font-size: 1.08rem;
+    line-height: 1.85;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+.post-document h1,
+.post-document h2,
+.post-document h3,
+.post-document h4 {
+    color: #20252b;
+    line-height: 1.25;
+    letter-spacing: 0;
+}
+
+.post-document h1 {
+    margin-top: 0.2em;
+    margin-bottom: 0.7em;
+    font-size: clamp(2.2rem, 5vw, 4rem);
+}
+
+.post-document h2 {
+    margin-top: 1.8em;
+    margin-bottom: 0.6em;
+    font-size: 2rem;
+}
+
+.post-document h3 {
+    margin-top: 1.5em;
+    font-size: 1.4rem;
+}
+
+/* Obsidian notes often use one source line per sentence. Preserve those line
+   breaks while still allowing normal paragraph wrapping on small screens. */
+.post-document p {
+    white-space: pre-line;
+}
+
+.post-document a {
+    color: #a8532f;
+    text-underline-offset: 0.18em;
+}
+
+.post-document img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 1.5rem auto;
+    border-radius: 0.5rem;
+}
+
+.post-document blockquote {
+    margin: 1.5rem 0;
+    padding: 0.25rem 1rem;
+    border-left: 3px solid #b45f34;
+    color: #59605b;
+}
+
+.post-document pre {
+    max-width: 100%;
+    overflow-x: auto;
+    padding: 1rem 1.1rem;
+    border-radius: 0.35rem;
+    white-space: pre;
+}
+
+.post-document table {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    border-collapse: collapse;
+    white-space: normal;
+}
+
+.post-document th,
+.post-document td {
+    min-width: 7rem;
+    padding: 0.55rem 0.7rem;
+    border: 1px solid #d8d1c5;
+    text-align: left;
+    vertical-align: top;
+}
+
+@media (max-width: 760px) {
+    .post-document {
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+
+    .post-document h1 {
+        font-size: 2.35rem;
+    }
+
+    .post-document h2 {
+        font-size: 1.65rem;
+    }
+}
